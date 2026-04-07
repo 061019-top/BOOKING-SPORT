@@ -27,7 +27,6 @@ let listClassSchedule = [
 const setListClassSchedule = () => {
   localStorage.setItem("ListClassSchedule", JSON.stringify(listClassSchedule));
 };
-// Lấy tạm để test sau đó đưa dữ liệu mẫu lên hết local từ bên login
 setListClassSchedule()
 
 // Lấy thẻ html

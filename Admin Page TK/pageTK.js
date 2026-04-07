@@ -96,7 +96,7 @@ renderlistScheduleUser();
 
 const handleFilterSchedule = () => {
   getScheduleUserLocal();
-  getLocalUserRegister(); // [THÊM MỚI] Gọi ListUser để lấy được email đối chiếu
+  getLocalUserRegister();
 
   let valClass = filterClass.value;
   let valDate = filterDate.value;
@@ -213,7 +213,6 @@ if (btnAddSchedule) {
 
     // validate trùng lịch của User
     if (editScheduleId) {
-      // [SỬA ĐỔI] Dùng == để fix lỗi lệch kiểu dữ liệu
       let currentSchedule = listScheduleUser.find((schedule) => {
         return schedule.id == editScheduleId;
       });
