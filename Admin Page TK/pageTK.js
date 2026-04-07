@@ -243,10 +243,8 @@ if (btnAddSchedule) {
         listScheduleUser[index].date = valDate;
         listScheduleUser[index].time = valTime;
         listScheduleUser[index].updatedAt = createdDate();
-
         setScheduleUserLocal();
         handleFilterSchedule();
-
         modalAdd.style.display = "none";
         Swal.fire({
           title: "Cập nhật thành công",
