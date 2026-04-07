@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="./pageTK.css" />
+  </head>
+  <body>
+    <div class="layout-wrapper">
+      <div class="sidebar">
+        <div class="sidebar-title">Admin Dashboard</div>
+        <nav class="sidebar-menu">
+          <ul>
+            <li class="sidebar-item">
+              <a
+                href="../Booking Page/bookingPage.html"
+                class="menu-item active"
+                >Quản lý lịch</a
+              >
+            </li>
+            <li class="sidebar-item">
+              <a href="../Adim Page Service/pageService.html" class="menu-item"
+                >Quản lý dịch vụ</a
+              >
+            </li>
+            <li class="sidebar-item">
+              <a href="../Home Page/homePage.html" class="menu-item"
+                >Trang chủ</a
+              >
+            </li>
+            <li class="sidebar-item">
+              <a href="../Login/login.html" class="menu-item logout"
+                >Đăng xuất</a
+              >
+            </li>
+          </ul>
+        </nav>
+      </div>
+
+      <div class="main-content">
+        <h1 class="page-heading">Thống kê lịch tập</h1>
+
+        <div class="stats-container">
+          <div class="stat-box">
+            <div class="stat-title">Tổng số lịch Gym</div>
+            <div class="stat-number color-blue">1</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-title">Tổng số lịch Yoga</div>
+            <div class="stat-number color-green">0</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-title">Tổng số lịch Zumba</div>
+            <div class="stat-number color-purple">0</div>
+          </div>
+        </div>
+
+        <div class="chart-box">
+          <div class="chart-header">
+            <div class="legend-color">2</div>
+            <div class="legend-text">Số lượng lịch đặt</div>
+          </div>
+
+          <div class="chart-body">
+            <div class="y-axis">
+              <span>1</span>
+              <span>0</span>
+            </div>
+
+            <div class="chart-colum-sum">
+              <div class="chart-colum">
+                <div class="bar-container">
+                  <div class="bar-colum" style="height: 100%"></div>
+                </div>
+                <div class="x-axis">Gym</div>
+              </div>
+              <div class="chart-colum">
+                <div class="bar-container">
+                  <div class="bar-colum" style="height: 30%"></div>
+                </div>
+                <div class="x-axis">Yoga</div>
+              </div>
+              <div class="chart-colum">
+                <div class="bar-container">
+                  <div class="bar-colum" style="height: 10%"></div>
+                </div>
+                <div class="x-axis">Zumba</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="filter-section">
+          <h3 class="section-title">Bộ lọc</h3>
+          <div class="filter-controls">
+            <div class="filter-group">
+              <label>Lớp học</label>
+              <select class="filter-input" id="filterClass">
+                <option value="all">Tất cả</option>
+              </select>
+            </div>
+            <div class="filter-group">
+              <label>Email</label>
+              <input
+                type="text"
+                class="filter-input"
+                id="filterEmail"
+                placeholder="Tìm theo email"
+              />
+            </div>
+            <div class="filter-group">
+              <label>Ngày</label>
+              <input type="date" class="filter-input" id="filterDate" />
+            </div>
+          </div>
+        </div>
+
+        <div class="table-section">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Lớp học</th>
+                <th>Ngày tập</th>
+                <th>Khung giờ</th>
+                <th>Họ tên</th>
+                <th>Email</th>
+                <th>Thao tác</th>
+              </tr>
+            </thead>
+            <tbody id="lists-schedule"></tbody>
+          </table>
+          <div class="pagination">
+            <button class="page-btn active">1</button>
+            <button class="page-btn">2</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal modal-add" id="modalAdd" style="display: none">
+      <div class="modal-box">
+        <h2 class="modal-title">Cập nhật lịch tập</h2>
+
+        <div class="form-group">
+          <label>Lớp học</label>
+          <select class="form-control" id="classSchedule">
+            <option value="">Chọn lớp học</option>
+          </select>
+          <span
+            class="alert"
+            id="alertClass"
+            style="color: red; font-size: 13px"
+          ></span>
+        </div>
+
+        <div class="form-group">
+          <label>Ngày tập</label>
+          <input type="date" class="form-control" id="dateSchedule" />
+          <span
+            class="alert"
+            id="alertDate"
+            style="color: red; font-size: 13px; display: block"
+          ></span>
+          <span
+            class="alert"
+            id="alertCheckDate"
+            style="color: red; font-size: 13px; display: block"
+          ></span>
+        </div>
+
+        <div class="form-group">
+          <label>Khung giờ</label>
+          <select class="form-control" id="timeSchedule">
+            <option value="">Chọn khung giờ</option>
+            <option value="07:00 - 09:00">07:00 - 09:00</option>
+            <option value="09:00 - 11:00">09:00 - 11:00</option>
+            <option value="14:00 - 16:00">14:00 - 16:00</option>
+          </select>
+          <span
+            class="alert"
+            id="alertTime"
+            style="color: red; font-size: 13px; display: block"
+          ></span>
+          <span
+            class="alert"
+            id="alertCheckTime"
+            style="color: red; font-size: 13px; display: block"
+          ></span>
+        </div>
+
+        <div class="modal-footer">
+          <button class="btn btn-cancel" id="closeAddModal">Hủy</button>
+          <button class="btn btn-save" id="saveSchedule">Lưu</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal modal-delete" id="modalDelete" style="display: none">
+      <div class="modal-box">
+        <h2 class="modal-title">Xác nhận xóa</h2>
+        <p class="confirm-message">
+          Bạn có chắc chắn muốn xóa lịch tập này không?
+        </p>
+        <div class="modal-footer">
+          <button class="btn btn-gray" id="closeDeleteModal">Hủy bỏ</button>
+          <button class="btn btn-red" id="yesDelete">Đồng ý xóa</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="./pageTK.js"></script>
+  </body>
+</html>

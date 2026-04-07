@@ -1,0 +1,185 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #f4f7f6;
+  font-family: Arial, sans-serif;
+}
+
+/* NAVBAR */
+/* NAVBAR */
+.navbar {
+  background-color: #1a1d23;
+  color: white;
+}
+
+.navbar-container {
+  max-width: 1200px;
+  margin: 0 auto; 
+  padding: 15px 20px; 
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar-logo {
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.navbar-links a {
+  color: white;
+  text-decoration: none;
+  margin-left: 20px;
+}
+
+/* MAIN */
+.container {
+  max-width: 1200px;
+  margin: 30px auto;
+  padding: 0 20px;
+}
+
+.header-action {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+/* BUTTON */
+.btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  color: white;
+  font-weight: bold;
+}
+
+.btn-add {
+  background: #5c7cfa;
+}
+.btn-save {
+  background: #6385F1;
+}
+.btn-update{
+   background: #70757a;
+   display: none;
+}
+.btn-cancel {
+  background: #6E7280;
+}
+.btn-gray {
+  background: #adb5bd;
+}
+.btn-red {
+  background: #fa5252;
+}
+
+.edit-text,
+.delete-text {
+  cursor: pointer;
+  margin-right: 10px;
+}
+.edit-text {
+  color: #5c7cfa;
+}
+.delete-text {
+  color: #fa5252;
+}
+
+/* TABLE */
+.table-wrapper {
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.data-table th,
+.data-table td {
+  padding: 15px;
+  border-bottom: 1px solid #eee;
+}
+
+.data-table th {
+  background-color: #f8f9fa;
+}
+
+/* MODAL BASE */
+.modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  /* Ẩn mặc định */
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+/* BOX */
+.modal-box {
+  background: white;
+  padding: 30px;
+  border-radius: 8px;
+  width: 450px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.modal-title {
+  margin-bottom: 20px;
+  font-size: 20px;
+}
+
+/* FORM */
+.form-group {
+  margin-bottom: 15px;
+}
+.alert{
+  color: red;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.form-control {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.confirm-message {
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* FOOTER */
+.modal-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.modal-add {
+  display: none;
+}
+
+.modal-delete {
+  display: none;
+}

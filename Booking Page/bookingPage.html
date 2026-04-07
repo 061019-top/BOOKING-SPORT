@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Booking Page</title>
+    <link rel="stylesheet" href="bookingPage.css" />
+  </head>
+  <body>
+    <header class="navbar">
+      <div class="navbar-container">
+        <div class="navbar-logo">GYM MANAGEMENT</div>
+        <nav class="navbar-links">
+          <a href="../Home Page/homePage.html">Trang chủ</a>
+          <a href="#">Lịch tập</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="container">
+      <div class="header-action">
+        <h1 class="title">Quản lý lịch tập</h1>
+        <button class="btn btn-add" id="openAddModal">Đặt lịch mới</button>
+      </div>
+
+      <div class="table-wrapper">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Lớp học</th>
+              <th>Ngày tập</th>
+              <th>Khung giờ</th>
+              <th>Họ tên</th>
+              <th>Email</th>
+              <th>Thao tác</th>
+            </tr>
+          </thead>
+          <tbody id="tbody-schedule"></tbody>
+        </table>
+      </div>
+    </main>
+
+    <div class="modal modal-add" id="modalAdd">
+      <div class="modal-box">
+        <h2 class="modal-title">Đặt lịch mới</h2>
+
+        <div class="form-group">
+          <label>Lớp học</label>
+          <select class="form-control" id="classSchedule">
+            <option value="">Chọn lớp học</option>
+            <option value="gym">Gym</option>
+            <option value="yoga">Yoga</option>
+            <option value="zumba">Zumba</option>
+          </select>
+          <span class="alert" id="alertClass"></span>
+          <span class="alert" id="alertCheckClass"></span>
+        </div>
+
+        <div class="form-group">
+          <label>Ngày tập</label>
+          <input type="date" class="form-control" id="dateSchedule" />
+          <span class="alert" id="alertDate"></span>
+          <span class="alert" id="alertCheckDate"></span>
+        </div>
+
+        <div class="form-group">
+          <label>Khung giờ</label>
+          <select class="form-control" id="timeSchedule">
+            <option value="">Chọn khung giờ</option>
+            <option value="07:00 - 09:00">07:00 - 09:00</option>
+            <option value="09:00 - 11:00">09:00 - 11:00</option>
+            <option value="14:00 - 16:00">14:00 - 16:00</option>
+          </select>
+          <span class="alert" id="alertTime"></span>
+          <span class="alert" id="alertCheckTime"></span>
+        </div>
+
+        <div class="modal-footer">
+          <button class="btn btn-cancel" id="closeAddModal">Hủy</button>
+          <button class="btn btn-save" id="saveSchedule">Lưu</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal modal-delete" id="modalDelete">
+      <div class="modal-box">
+        <h2 class="modal-title">Xác nhận xóa</h2>
+        <p class="confirm-message">
+          Bạn có chắc chắn muốn xóa lịch tập này không?
+        </p>
+
+        <div class="modal-footer">
+          <button class="btn btn-gray" id="closeDeleteModal">Hủy bỏ</button>
+          <button class="btn btn-red" id="yesDelete">Đồng ý xóa</button>
+        </div>
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="./bookingPage.js"></script>
+  </body>
+</html>

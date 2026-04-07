@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Register</title>
+    <link rel="stylesheet" href="register.css" />
+  </head>
+  <body>
+    <div class="form-register">
+      <h1>Đăng ký tài khoản</h1>
+      <br /><br />
+      <div class="">
+        <label for="">Họ và tên </label>
+        <input type="text" class="name-register" />
+        <p class="alert alert-name">Họ và tên không được để trống</p>
+        <br /><br />
+        <label for="">Email</label>
+        <br />
+        <input type="text" class="email-register" />
+        <p class="alert alert-mail-none">Email không được để trống</p>
+        <p class="alert alert-mail">Email phải đúng định dạng</p>
+               <p class="alert alert-ismail">Email đã tồn tại trên hệ thống</p>
+        <br /><br />
+        <label for="">Mật khẩu </label>
+        <input type="text" class="pass-register" />
+        <p class="alert alert-pass-none">Mật khẩu không được để trống</p>
+        <p class="alert alert-pass">Mật khẩu tối thiểu 8 ký tự</p>
+        <br /><br />
+        <label for="">Xác nhận mật khẩu </label>
+        <input type="text" class="repass-register" />
+        <p class="alert alert-repass-none">
+          Mật khẩu xác nhận không được để trống
+        </p>
+        <p class="alert alert-repass">Mật khẩu không trùng khớp</p>
+        <br /><br />
+        <button id="submit-register">Đăng ký</button>
+      </div>
+      <p>Bạn đã có tài khoản <a href="../Login/login.html">Đăng nhập ngay</a></p>
+    </div>
+    <script src="./register.js"></script>
+  </body>
+</html>

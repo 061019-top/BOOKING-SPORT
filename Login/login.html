@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <link rel="stylesheet" href="./login.css" />
+  </head>
+  <body>
+    <div class="form-login">
+      <h1>Đăng nhập</h1>
+      <div class="body-login">
+        <label for="">Email </label>
+        <br>
+        <input type="text" class="email-login" />
+        <p class="alert alert-email">Email chưa tồn tại trên hệ thống</p>
+          <p class="alert email-none">Email không được để trống</p>
+        <br /><br />
+        <label for="">Mật khẩu</label>
+        <br>
+        <input type="text" class="pass-login" />
+          <p class="alert pass-none">Mật khẩu không được để trống</p>
+        <p class="alert alert-pass">Sai mật khẩu</p>
+        <br /><br />
+         <button id="submit-login">Đăng nhập</button>
+      </div>
+      <p>Bạn chưa có tài khoản <a href="../Register/register.html">Đăng ký ngay</a></p>
+    </div>
+    <script src="./login.js"></script>
+  </body>
+</html>

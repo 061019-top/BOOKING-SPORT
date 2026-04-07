@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Service</title>
+    <link rel="stylesheet" href="./pageService.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+
+    <div class="dashboard-layout">
+        <aside class="sidebar">
+            <div class="sidebar-logo">Admin Dashboard</div>
+            <nav class="sidebar-menu">
+                <li class="sidebar-item">
+                    <a href="../Admin Page TK/pageTK.html" class="menu-item">Quản lý lịch</a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="../Adim Page Service/pageService.html" class="menu-item active">Quản lý dịch vụ</a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="../Home Page/homePage.html" class="menu-item">Trang chủ</a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="../Login/login.html" class="menu-item logout">Đăng xuất</a>
+                </li>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <header class="page-header">
+                <h1 class="page-title">Quản lý Dịch vụ</h1>
+                <button class="btn btn-add" id="openAddServiceModal">Thêm dịch vụ mới</button>
+            </header>
+
+            <div class="table-wrapper">
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Tên dịch vụ</th>
+                            <th>Mô tả</th>
+                            <th>Hình ảnh</th>
+                            <th>Thao tác</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tbody-services">
+                    </tbody>
+                </table>
+            </div>
+        </main>
+    </div>
+
+    <div class="modal modal-add" id="modalAddService">
+        <div class="modal-box">
+            <h2 class="modal-title" id="modalTitle">Thêm dịch vụ mới</h2>
+
+            <div class="form-group">
+                <label>Tên dịch vụ</label>
+                <input type="text" class="form-control" id="inputServiceName" placeholder="Nhập tên dịch vụ">
+                <span id="alertName" style="color: red; font-size: 13px; display: block; margin-top: 5px;"></span>
+            </div>
+
+            <div class="form-group">
+                <label>Mô tả</label>
+                <textarea class="form-control" id="inputServiceDesc" placeholder="Nhập mô tả"></textarea>
+                <span id="alertDesc" style="color: red; font-size: 13px; display: block; margin-top: 5px;"></span>
+            </div>
+
+            <div class="form-group">
+                <label>URL Hình ảnh</label>
+                <input type="text" class="form-control" id="inputServiceImg" placeholder="Nhập link hình ảnh">
+                <span id="alertImg" style="color: red; font-size: 13px; display: block; margin-top: 5px;"></span>
+            </div>
+
+            <div class="modal-footer">
+                <button class="btn btn-gray" id="closeAddServiceModal">Hủy</button>
+                <button class="btn btn-save" id="btnSaveService"></button>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal modal-delete" id="modalDeleteConfirmation">
+        <div class="modal-box">
+            <h2 class="modal-title">Xác nhận xóa</h2>
+            <p class="confirm-message">Bạn có chắc chắn muốn xóa dịch vụ này?</p>
+
+            <div class="modal-footer">
+                <button class="btn btn-gray" id="closeDeleteConfirmationModal">Hủy</button>
+                <button class="btn btn-red" id="btnConfirmDelete">Xóa</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="./pageService.js" defer></script>
+</body>
+</html>
