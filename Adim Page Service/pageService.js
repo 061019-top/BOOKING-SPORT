@@ -31,8 +31,7 @@ const getListClassSchedule = () => {
 const setListClassSchedule = () => {
   localStorage.setItem("ListClassSchedule", JSON.stringify(listClassSchedule));
 };
-// Lấy tạm để test sau đó đưa dữ liệu mẫu lên hết local từ bên login
-setListClassSchedule()
+
 // Hàm render dịch vụ
 let tbodyServices = document.getElementById("tbody-services");
 

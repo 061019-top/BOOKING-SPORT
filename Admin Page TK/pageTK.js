@@ -38,17 +38,9 @@ const getLocalUserRegister = () => {
 };
 
 getListClassLocal();
-let filterClass = document.getElementById("filterClass");
 let filterDate = document.getElementById("filterDate");
 let filterEmail = document.getElementById("filterEmail");
 let dataScheduleUser = document.getElementById("lists-schedule");
-
-const renderFilterOptions = () => {
-  filterClass.innerHTML = `<option value="all">Tất cả</option>`;
-  listClass.forEach((service) => {
-    filterClass.innerHTML += `<option value="${service.id}">${service.name}</option>`;
-  });
-};
 
 // Hàm Render dữ liệu ra màn hình
 const renderlistScheduleUser = () => {
@@ -288,10 +280,7 @@ const deleteScheduleUser = (scheduleId) => {
   }
 });
 
-
-// --- CHẠY KHỞI TẠO LÚC LOAD TRANG ---
 getListClassLocal();
 getScheduleUserLocal();
 getLocalUserRegister();
-renderFilterOptions();
 renderlistScheduleUser();
